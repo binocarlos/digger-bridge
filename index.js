@@ -14,7 +14,7 @@
 
 var Client = require('digger-client');
 var http = require('http');
-
+http.globalAgent.maxSockets = 100;
 var exports = module.exports = function(options){
 
   options = options || {};
