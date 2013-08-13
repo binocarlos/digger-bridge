@@ -1,6 +1,6 @@
 {
   "name": "digger-bridge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A client to server bridge for digger requests",
   "main": "index.js",
   "scripts": {
