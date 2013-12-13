@@ -1,24 +1,23 @@
 digger-bridge
 =============
 
-A client to server bridge for digger requests
+Turns HTTP requests into digger req objects and converts the response back to HTTP
 
 
 ```js
-var Bridge = require('digger-bridge');
+var app = express();
+var bridge = require('digger-bridge');
 
-// create a bridge connected to a reception server on the given details
-var bridge = Bridge({
-	hostname:'127.0.0.1',
-	port:8799
-});
-
-// get a supply chain connected to a backend warehouse
-var supplychain = bridge.connect('/my/database/path');
-
-// we can use the supplychain as a container to select from
-supplychain('some selector').ship(function(results){
-	
+var digger = bridge.connect(function(req, reply){
+	// req is an object
+	// reply is a callback
 })
 
+app.use('/digger', digger);
+```
+
+## install
+
+```
+$ npm install digger-bridge
 ```
