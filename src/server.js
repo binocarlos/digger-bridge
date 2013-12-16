@@ -24,8 +24,6 @@ var jsonfields = require('json-fields');
 
 module.exports = function(fn){
 
-	var self = this;
-
 	return function(req, res){
 
 		var auth = req.session ? req.session.auth || {} : {};

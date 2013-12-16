@@ -1,0 +1,23 @@
+<script src="browser.js"></script>
+<script>
+	var Bridge = require('./src/browser.js');
+
+	var bridge = Bridge();
+
+	window._test = {
+		results:null
+	}
+
+	bridge({
+		url:'/',
+		method: 'get',
+		headers:{
+      "x-json-thing":{
+      	apple:10
+      }
+    }
+	}, function(error, results){
+		window._test.results = results;
+	})
+
+</script>
