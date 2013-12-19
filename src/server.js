@@ -44,7 +44,7 @@ module.exports = function(fn){
     }, function(error, result){
       if(error){
         var statusCode = 500;
-        error = error.replace(/^(\d+):/, function(match, code){
+        error = (error.toString()).replace(/^(\d+):/, function(match, code){
           statusCode = code;
           return '';
         })
