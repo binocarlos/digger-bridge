@@ -32,7 +32,7 @@ module.exports = function(baseurl){
     request({
       url:(baseurl + req.url).replace(/\/\//g, '/'),
       method:req.method.toUpperCase(),
-      headers:jsonfields.stringify(req.headers),
+      headers:jsonfields.stringify(req.headers, 'x-json'),
       body:JSON.stringify(req.body)
     }, function(error, res, body){
       if(error){
