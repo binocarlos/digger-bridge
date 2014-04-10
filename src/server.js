@@ -35,6 +35,7 @@ module.exports = function(fn){
     	headers['x-json-user'] = user;
     }
 
+
     fn({
       method:req.method.toLowerCase(),
       url:req.url.split('?')[0],
